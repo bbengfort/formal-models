@@ -46,7 +46,7 @@ A situation where the spec isn't able to do anything: it can only take `stutter`
 Fairness
 ========
 
-An `action` is weakly fair when, if it always can happen, it is guaranteed to happen. This means the spec cannot stutter.  
+An `action` is weakly fair when, if it always can happen, it is guaranteed to happen. This means the spec cannot stutter.
 
 An action is strongly fair when, if never permanently disabled, it is guaranteed to happen. This means the spec cannot livelock.
 
@@ -75,7 +75,7 @@ A configuration of what properties we're checking a spec for, what we are assign
 
 Nondeterminism
 ==============
- 
+
 There are several possible things that could validly happen. In PlusCal, the points of nondeterminism are `processes <process>`, `with`, and `either`. Multiple possible starting states also count here. When `TLC` has to make a nondeterministic choice, it creates a separate `behavior` for each choice and evaluates them all. Eg given the code
 
 ::
@@ -96,7 +96,7 @@ PlusCal
 A pseudocode-like "algorithm language" that compiles to TLA+. Handles things like assignments, loops, control flow, processes. If it's an all-lowercase term inside of an ``algorithm`` block, it's PlusCal, otherwise it's TLA+.
 
 ::
-  
+
   \* incrementing the second element of a sequence
   \* TLA+
 
@@ -106,7 +106,7 @@ A pseudocode-like "algorithm language" that compiles to TLA+. Handles things lik
 
   seq[2] := seq[2] + 1;
 
- 
+
 .. _safety:
 
 Safety
@@ -122,7 +122,7 @@ Specification
 A formal description of how a system should behave, along with the `invariants <invariant>` it should satisfy. Checked with a `model checker <model>`.
 
 .. _state_space_explosion:
- 
+
 State-Space Explosion
 =====================
 
@@ -149,7 +149,7 @@ An `operator <operator>` to hold over a sequence of states, or an entire `behavi
 TLC
 ===
 
-The *model checker* for TLA+. When given a spec and an `invariant`, TLC will stake every possible starting state and examine every possible `behavior` of each state. 
+The *model checker* for TLA+. When given a spec and an `invariant`, TLC will stake every possible starting state and examine every possible `behavior` of each state.
 
 .. _unquantifiable:
 

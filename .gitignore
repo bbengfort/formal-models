@@ -6,7 +6,7 @@
 *.toolbox/*.tex
 *.toolbox/*___*_SnapShot*.launch
 *.toolbox/**/*.tla
-/*.toolbox/**/*.out
+*.toolbox/**/*.out
 *.toolbox/**/MC.cfg
 
 # Generated Files
