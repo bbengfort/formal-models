@@ -1,0 +1,293 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Types &#8212; workshop  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="prev" title="PlusCal" href="pluscal.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="types">
+<h1>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h1>
+<p id="comparison"><span id="id3"></span><span id="id2"></span><span id="id1"></span>All types use <code class="docutils literal notranslate"><span class="pre">=</span></code> for equality and <code class="docutils literal notranslate"><span class="pre">/=</span></code> (or <code class="docutils literal notranslate"><span class="pre">#</span></code>) for inequality. Two values are equal if they have the same value, otherwise they are unequal. If the two values are different types, such as integers and strings, comparison raises an error.</p>
+<p>The one exception to this are <a class="reference internal" href="#model-value"><span class="std std-ref">model values</span></a>. A model value is comparable to anything and is unequal to everything but itself.</p>
+<div class="section" id="simple-types">
+<h2>Simple Types<a class="headerlink" href="#simple-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="boolean">
+<span id="id4"></span><h3>Boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>. <code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code> is the set <code class="docutils literal notranslate"><span class="pre">{TRUE,</span> <span class="pre">FALSE}</span></code>. The following operations are defined over booleans:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">/\</span></code></td>
+<td>and (“conjunction”)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">\/</span></code></td>
+<td>or (“disjunction”)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">~</span></code></td>
+<td>not</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="integer">
+<span id="id5"></span><h3>Integer<a class="headerlink" href="#integer" title="Permalink to this headline">¶</a></h3>
+<p>0, 1, -123, etc. If we <a class="reference internal" href="expressions.html#extends"><span class="std std-ref">EXTENDS</span></a> <code class="docutils literal notranslate"><span class="pre">Integers</span></code>, we get the following operations:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span> <span class="pre">*</span></code></td>
+<td>plus/minus/times</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">%</span></code></td>
+<td>remainder</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">\div</span></code></td>
+<td>integer division</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span> <span class="pre">&lt;=</span> <span class="pre">&gt;=</span></code></td>
+<td>comparison ops</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">a..b</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">{a,</span> <span class="pre">a+1,</span> <span class="pre">...,</span> <span class="pre">b}</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Extending integers also gives us the sets <code class="docutils literal notranslate"><span class="pre">Int</span></code>, which is the set of all integers, and <code class="docutils literal notranslate"><span class="pre">Nat</span></code>, which is the set <code class="docutils literal notranslate"><span class="pre">{0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">...}</span></code>. Both of these are infinite sets and so are <code class="docutils literal notranslate"><span class="pre">unquantifiable</span></code>.</p>
+</div>
+<div class="section" id="string">
+<span id="id6"></span><h3>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h3>
+<p>“a”, “b”, “hello”, etc. Strings <strong>must</strong> use double quotes, not single quotes. <code class="docutils literal notranslate"><span class="pre">STRING</span></code> is the set of all strings. It is an infinite set and so <code class="docutils literal notranslate"><span class="pre">unquantifiable</span></code>.</p>
+<p>There are no operators over strings.</p>
+</div>
+<div class="section" id="model-value">
+<span id="id7"></span><h3>Model Value<a class="headerlink" href="#model-value" title="Permalink to this headline">¶</a></h3>
+<p>A value that’s only equal to itself. Can only be made via an assignment to a <a class="reference internal" href="expressions.html#constant"><span class="std std-ref">CONSTANT</span></a>.</p>
+</div>
+</div>
+<div class="section" id="complex-types">
+<h2>Complex Types<a class="headerlink" href="#complex-types" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="set">
+<span id="id8"></span><h2>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h2>
+<p>A collection of unique, unordered elements. Written <code class="docutils literal notranslate"><span class="pre">{a,</span> <span class="pre">b,</span> <span class="pre">...}</span></code>. All values must be <a class="reference internal" href="#comparison"><span class="std std-ref">comparable</span></a>.</p>
+<p>Sets support for following operators:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="49%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">\in</span> <span class="pre">S</span></code></td>
+<td>is an element</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">\notin</span> <span class="pre">S</span></code></td>
+<td>not an element</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">\subseteq</span> <span class="pre">T</span></code></td>
+<td>subset</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">\union</span> <span class="pre">T</span></code></td>
+<td>set merge</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">\intersect</span> <span class="pre">T</span></code></td>
+<td>set intersection</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">\</span> <span class="pre">T</span></code></td>
+<td>set difference</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">SUBSET</span> <span class="pre">S</span></code></td>
+<td>set of subsets</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">UNION</span> <span class="pre">S</span></code></td>
+<td>merge set of sets</td>
+</tr>
+</tbody>
+</table>
+<p id="filter"><span id="map"></span>There are two set transformations:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="64%" />
+<col width="36%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">{x</span> <span class="pre">\in</span> <span class="pre">S:</span> <span class="pre">P(x)}</span></code></td>
+<td>set filter</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">{P(x):</span> <span class="pre">x</span> <span class="pre">\in</span> <span class="pre">S}</span></code></td>
+<td>set map</td>
+</tr>
+</tbody>
+</table>
+<p id="module-finitesets">If we <a class="reference internal" href="expressions.html#extends"><span class="std std-ref">extend</span></a> <code class="docutils literal notranslate"><span class="pre">FiniteSets</span></code>, we get the following operators:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">IsFiniteSet(S)</span></code></td>
+<td>what is says</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Cardinality(S)</span></code></td>
+<td>number of elements in S</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tuple">
+<span id="sequence"></span><span id="id9"></span><h2>Sequence<a class="headerlink" href="#tuple" title="Permalink to this headline">¶</a></h2>
+<p>Also called a <strong>Tuple</strong>. An ordered collection of elements. Written <code class="docutils literal notranslate"><span class="pre">&lt;&lt;a,</span> <span class="pre">b,</span> <span class="pre">...</span> <span class="pre">&gt;&gt;</span></code>. The first element is <code class="docutils literal notranslate"><span class="pre">seq[1]</span></code>, the second at <code class="docutils literal notranslate"><span class="pre">seq[2]</span></code>, etc. Sequences are 1-indexed.  Sequences are 1-indexed. Sequences are 1-indexed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">DOMAIN</span> <span class="pre">Sequence</span></code> is the set <code class="docutils literal notranslate"><span class="pre">1..Len(Sequence)</span></code>.</p>
+<p id="x"><code class="docutils literal notranslate"><span class="pre">Set1</span> <span class="pre">\X</span> <span class="pre">Set2</span> <span class="pre">\X</span> <span class="pre">...</span></code> is the set of all tuples where the first element is in <code class="docutils literal notranslate"><span class="pre">Set1</span></code>, the second element is in <code class="docutils literal notranslate"><span class="pre">Set2</span></code>, etc. <code class="docutils literal notranslate"><span class="pre">Set1</span> <span class="pre">\X</span> <span class="pre">(Set2</span> <span class="pre">\X</span> <span class="pre">Set3)</span></code> is a 2-tuple where the first element is in <code class="docutils literal notranslate"><span class="pre">Set1</span></code> and the second element is a <em>tuple</em> in <code class="docutils literal notranslate"><span class="pre">Set2</span> <span class="pre">\X</span> <span class="pre">Set3</span></code>.</p>
+<p id="module-sequences">If we extend <code class="docutils literal notranslate"><span class="pre">Sequences</span></code>, we get the following operators:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Len(S)</span></code></td>
+<td>Length of sequence</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Seq(Set)</span></code></td>
+<td>Set of all sequences of elements in set.
+<a class="reference internal" href="glossary.html#unquantifiable"><span class="std std-ref">Unquantifiable</span></a>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Head(S)</span></code></td>
+<td>First element of sequence.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Tail(s)</span></code></td>
+<td>All elements of sequence but first.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Append(S,</span> <span class="pre">e)</span></code></td>
+<td>The sequence <code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">\o</span> <span class="pre">&lt;&lt;e&gt;&gt;</span></code>.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">S1</span> <span class="pre">\o</span> <span class="pre">S2</span></code></td>
+<td>Concatenate two sequences</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="structure">
+<span id="struct"></span><h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
+<p>A mapping from strings to values. Written <code class="docutils literal notranslate"><span class="pre">[key1</span> <span class="pre">|-&gt;</span> <span class="pre">val1,</span> <span class="pre">key2</span> <span class="pre">|-&gt;</span> <span class="pre">val2]</span></code>. Elements are accessed either by <code class="docutils literal notranslate"><span class="pre">struct[&quot;key&quot;]</span></code> or <code class="docutils literal notranslate"><span class="pre">struct.key</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">DOMAIN</span> <span class="pre">struct</span></code> is the set of string keys.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[key1:</span> <span class="pre">set1,</span> <span class="pre">key2:</span> <span class="pre">set2]</span></code> is the set of all structures where the value of the first key is in <code class="docutils literal notranslate"><span class="pre">set1</span></code>, etc.</p>
+</div>
+<div class="section" id="function">
+<span id="id10"></span><h2>Function<a class="headerlink" href="#function" title="Permalink to this headline">¶</a></h2>
+<p>A mapping from elements of a set to values. Written <code class="docutils literal notranslate"><span class="pre">[e1</span> <span class="pre">\in</span> <span class="pre">Set1,</span> <span class="pre">e2</span> <span class="pre">\in</span> <span class="pre">Set2,</span> <span class="pre">...</span> <span class="pre">|-&gt;</span> <span class="pre">F(e1,</span> <span class="pre">e2,</span> <span class="pre">...)]</span></code>. Values are accessed with <code class="docutils literal notranslate"><span class="pre">f[a,</span> <span class="pre">b,</span> <span class="pre">c...]</span></code>. The sets may be unquantifiable.</p>
+<p id="domain"><code class="docutils literal notranslate"><span class="pre">DOMAIN</span> <span class="pre">func</span></code> is the set <code class="docutils literal notranslate"><span class="pre">func</span></code> is defined over. If <code class="docutils literal notranslate"><span class="pre">func</span></code> is a multivalued function, then the domain will be a set of <code class="docutils literal notranslate"><span class="pre">tuples</span> <span class="pre">&lt;tuple&gt;</span></code>: <code class="docutils literal notranslate"><span class="pre">Set1</span> <span class="pre">\X</span> <span class="pre">Set2</span> <span class="pre">\X</span> <span class="pre">...</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[Set1</span> <span class="pre">-&gt;</span> <span class="pre">Set2]</span></code> is the set of all functions where the domain is <code class="docutils literal notranslate"><span class="pre">Set1</span></code> that map to values in <code class="docutils literal notranslate"><span class="pre">Set2</span></code>.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Types</a><ul>
+<li><a class="reference internal" href="#simple-types">Simple Types</a><ul>
+<li><a class="reference internal" href="#boolean">Boolean</a></li>
+<li><a class="reference internal" href="#integer">Integer</a></li>
+<li><a class="reference internal" href="#string">String</a></li>
+<li><a class="reference internal" href="#model-value">Model Value</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#complex-types">Complex Types</a></li>
+<li><a class="reference internal" href="#set">Set</a></li>
+<li><a class="reference internal" href="#tuple">Sequence</a></li>
+<li><a class="reference internal" href="#structure">Structure</a></li>
+<li><a class="reference internal" href="#function">Function</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="pluscal.html" title="previous chapter">PlusCal</a></li>
+      <li>Next: <a href="glossary.html" title="next chapter">Glossary</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/types.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Hillel.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/types.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

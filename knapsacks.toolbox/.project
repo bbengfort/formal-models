@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>knapsacks</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>toolbox.builder.TLAParserBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>toolbox.natures.TLANature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Reduce.tla</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Reduce.tla</locationURI>
+		</link>
+		<link>
+			<name>knapsacks.tla</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/knapsacks.tla</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

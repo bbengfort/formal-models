@@ -1,0 +1,271 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Expressions &#8212; workshop  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="PlusCal" href="pluscal.html" />
+    <link rel="prev" title="Welcome to workshop’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="expressions">
+<h1>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="operator">
+<span id="id1"></span><h2>==<a class="headerlink" href="#operator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="n">Op</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span> <span class="ni">==</span> <span class="n">expr</span>
+</pre></div>
+</div>
+<p>Defines <code class="docutils literal notranslate"><span class="pre">Op</span></code> as an operator, roughly equivalent to a programming function.</p>
+<div class="section" id="higher-order-operators">
+<span id="hoo"></span><h3>Higher-Order Operators<a class="headerlink" href="#higher-order-operators" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="n">Op</span><span class="p">(</span><span class="n">param</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="o">...</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="ni">==</span> <span class="n">expr</span>
+</pre></div>
+</div>
+<p>Declares that the <code class="docutils literal notranslate"><span class="pre">param</span></code> parameter is itself an operator with <em>n</em> parameters.</p>
+</div>
+<div class="section" id="lambda">
+<span id="id2"></span><h3>LAMBDA<a class="headerlink" href="#lambda" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="n">LAMBDA</span> <span class="n">x</span><span class="p">:</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Defines an anonymous operator.</p>
+</div>
+</div>
+<div class="section" id="if">
+<span id="id3"></span><h2>IF<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="k k-Conditional">IF</span> <span class="n">condition</span> <span class="k k-Conditional">THEN</span> <span class="n">expr1</span> <span class="k k-Conditional">ELSE</span> <span class="n">expr2</span>
+</pre></div>
+</div>
+<p>If statement. Unlike programming languages (and the <a class="reference internal" href="pluscal.html#if-pluscal"><span class="std std-ref">pluscal if</span></a>), <code class="docutils literal notranslate"><span class="pre">else</span></code> must always be defined.</p>
+</div>
+<div class="section" id="case">
+<span id="id4"></span><h2>CASE<a class="headerlink" href="#case" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="k k-Conditional">CASE</span> <span class="n">cond1</span> <span class="o">-&gt;</span> <span class="n">expr1</span>
+  <span class="p">[]</span> <span class="n">cond2</span> <span class="o">-&gt;</span> <span class="n">expr2</span>
+  <span class="c">\* ...</span>
+  <span class="p">[]</span> <span class="k k-Conditional">OTHER</span> <span class="o">-&gt;</span> <span class="n">expr_default</span>
+</pre></div>
+</div>
+<p>Selects an expression from an <a class="reference internal" href="glossary.html#arbitrary"><span class="std std-ref">Arbitrary</span></a> true condition. If none match, then <code class="docutils literal notranslate"><span class="pre">OTHER</span></code> is used as the default. If none match and there is no <code class="docutils literal notranslate"><span class="pre">OTHER</span></code>, raises an error.</p>
+</div>
+<div class="section" id="let">
+<span id="id5"></span><h2>LET<a class="headerlink" href="#let" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="k k-Conditional">LET</span> <span class="n">op1</span> <span class="ni">==</span> <span class="n">expr1</span>
+    <span class="n">op2</span> <span class="ni">==</span> <span class="n">expr2</span>
+<span class="k k-Conditional">IN</span> <span class="n">expr</span>
+</pre></div>
+</div>
+<p>Defines <code class="docutils literal notranslate"><span class="pre">op1</span></code>, <code class="docutils literal notranslate"><span class="pre">op2</span></code>, etc as scoped operators in <code class="docutils literal notranslate"><span class="pre">expr</span></code>.</p>
+</div>
+<div class="section" id="extends">
+<span id="id6"></span><h2>EXTENDS<a class="headerlink" href="#extends" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="kn">EXTENDS</span> <span class="n">TLC</span><span class="p">,</span> <span class="n">Integers</span><span class="p">,</span> <span class="n">FiniteSets</span>
+</pre></div>
+</div>
+<p>Includes operators defined in these modules as part of your spec.</p>
+</div>
+<div class="section" id="local">
+<span id="instance"></span><span id="id7"></span><h2>INSTANCE<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="kn">INSTANCE</span> <span class="n">Module</span>
+</pre></div>
+</div>
+<p>Includes all operators defined in <code class="docutils literal notranslate"><span class="pre">Module</span></code> <em>except</em> any operators declared <code class="docutils literal notranslate"><span class="pre">LOCAL</span></code>.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">LOCAL</span> <span class="pre">INSTANCE</span></code> to make all of the imported operators local, too.</p>
+</div>
+<div class="section" id="namedspaced-instances">
+<span id="id8"></span><h2>Namedspaced Instances<a class="headerlink" href="#namedspaced-instances" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="ni">==</span> <span class="kn">INSTANCE</span> <span class="n">Module</span>
+</pre></div>
+</div>
+<p>Includes all operators under the <code class="docutils literal notranslate"><span class="pre">M</span></code> namespace. If <code class="docutils literal notranslate"><span class="pre">op</span></code> is an operator in <code class="docutils literal notranslate"><span class="pre">Module</span></code>, <code class="docutils literal notranslate"><span class="pre">op</span></code> is imported as <code class="docutils literal notranslate"><span class="pre">M!op</span></code>.</p>
+</div>
+<div class="section" id="constant">
+<span id="id9"></span><h2>CONSTANT<a class="headerlink" href="#constant" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="kn">CONSTANT</span> <span class="n">C1</span><span class="p">,</span> <span class="n">C2</span><span class="p">,</span> <span class="n">Op</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Defines <code class="docutils literal notranslate"><span class="pre">C1</span></code>, etc as values that will be defined by the <a class="reference internal" href="glossary.html#model"><span class="std std-ref">Model</span></a>, not the spec. Constants can either be assigned to ordinary values, <a class="reference internal" href="types.html#model-value"><span class="std std-ref">model values</span></a>, or sets of model values. Constant operators may only be assigned to ordinary operators (not model values).</p>
+<div class="section" id="assume">
+<span id="id10"></span><h3>ASSUME<a class="headerlink" href="#assume" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="kn">CONSTANT</span> <span class="n">C1</span>
+<span class="n">ASSUME</span> <span class="n">expr</span><span class="p">(</span><span class="n">C1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Forces an expression involving constants to be true. If false, prevents the model from running. Can be used to constraint the valid parameters for a model.</p>
+</div>
+</div>
+</div>
+<div class="section" id="logical-operations">
+<h1>Logical Operations<a class="headerlink" href="#logical-operations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id11">
+<span id="id12"></span><h2>=&gt;<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="ni">=&gt;</span> <span class="n">Q</span>
+</pre></div>
+</div>
+<p>True if <code class="docutils literal notranslate"><span class="pre">P</span></code> is true ONLY if <code class="docutils literal notranslate"><span class="pre">Q</span></code> is true. Still true if <code class="docutils literal notranslate"><span class="pre">P</span></code> is false and <code class="docutils literal notranslate"><span class="pre">Q</span></code> is true. Equivalent to <code class="docutils literal notranslate"><span class="pre">~P</span> <span class="pre">\/</span> <span class="pre">Q</span></code>.</p>
+</div>
+<div class="section" id="id13">
+<span id="id14"></span><h2>&lt;=&gt;<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">&lt;=</span><span class="ni">&gt;</span> <span class="n">Q</span>
+</pre></div>
+</div>
+<p>True if <code class="docutils literal notranslate"><span class="pre">P</span></code> and <code class="docutils literal notranslate"><span class="pre">Q</span></code> are both true or both false. Equivalent to <code class="docutils literal notranslate"><span class="pre">(P</span> <span class="pre">/\</span> <span class="pre">Q)</span> <span class="pre">\/</span> <span class="pre">(~P</span> <span class="pre">/\</span> <span class="pre">~Q)</span></code>.</p>
+</div>
+<div class="section" id="a">
+<span id="id15"></span><h2>\A<a class="headerlink" href="#a" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="s">\A</span> <span class="n">x</span> <span class="s">\in</span> <span class="n">Set</span><span class="p">:</span>
+  <span class="n">F</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>True if <code class="docutils literal notranslate"><span class="pre">F</span></code> is true for <em>every single element</em> in <code class="docutils literal notranslate"><span class="pre">Set</span></code>.</p>
+</div>
+<div class="section" id="e">
+<span id="id16"></span><h2>\E<a class="headerlink" href="#e" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="s">\E</span> <span class="n">x</span> <span class="s">\in</span> <span class="n">Set</span><span class="p">:</span>
+  <span class="n">F</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>True if <code class="docutils literal notranslate"><span class="pre">F</span></code> is true for <em>at least one element</em> in <code class="docutils literal notranslate"><span class="pre">Set</span></code>.</p>
+</div>
+<div class="section" id="choose">
+<span id="id17"></span><h2>CHOOSE<a class="headerlink" href="#choose" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-tla notranslate"><div class="highlight"><pre><span></span><span class="s">CHOOSE</span> <span class="n">x</span> <span class="s">\in</span> <span class="n">Set</span><span class="p">:</span>
+  <span class="n">F</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns an <a class="reference internal" href="glossary.html#arbitrary"><span class="std std-ref">Arbitrary</span></a> element in <code class="docutils literal notranslate"><span class="pre">Set</span></code> which satisfies <code class="docutils literal notranslate"><span class="pre">F</span></code>. If no such element exists, raises an error.</p>
+</div>
+</div>
+<div class="section" id="temporal-logic">
+<span id="id18"></span><h1>Temporal Logic<a class="headerlink" href="#temporal-logic" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id19">
+<span id="id20"></span><h2>[]<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<p>Always. <code class="docutils literal notranslate"><span class="pre">[]P</span></code> is true if <code class="docutils literal notranslate"><span class="pre">P</span></code> is true for every state. Equivalent to declaring P an <a class="reference internal" href="glossary.html#invariant"><span class="std std-ref">Invariant</span></a>.</p>
+</div>
+<div class="section" id="id21">
+<span id="id22"></span><h2>&lt;&gt;<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<p>Eventually. <code class="docutils literal notranslate"><span class="pre">&lt;&gt;P</span></code> is true if <code class="docutils literal notranslate"><span class="pre">P</span></code> is true for at least one state in every <a class="reference internal" href="glossary.html#behavior"><span class="std std-ref">Behavior</span></a>.</p>
+</div>
+<div class="section" id="id23">
+<span id="id24"></span><h2>~&gt;<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<p>Leads-to. <code class="docutils literal notranslate"><span class="pre">P</span> <span class="pre">~&gt;</span> <span class="pre">Q</span></code> is true if, for every state where <code class="docutils literal notranslate"><span class="pre">P</span></code> is true, there is a present or future state where <code class="docutils literal notranslate"><span class="pre">Q</span></code> is true.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Expressions</a><ul>
+<li><a class="reference internal" href="#operator">==</a><ul>
+<li><a class="reference internal" href="#higher-order-operators">Higher-Order Operators</a></li>
+<li><a class="reference internal" href="#lambda">LAMBDA</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#if">IF</a></li>
+<li><a class="reference internal" href="#case">CASE</a></li>
+<li><a class="reference internal" href="#let">LET</a></li>
+<li><a class="reference internal" href="#extends">EXTENDS</a></li>
+<li><a class="reference internal" href="#local">INSTANCE</a></li>
+<li><a class="reference internal" href="#namedspaced-instances">Namedspaced Instances</a></li>
+<li><a class="reference internal" href="#constant">CONSTANT</a><ul>
+<li><a class="reference internal" href="#assume">ASSUME</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#logical-operations">Logical Operations</a><ul>
+<li><a class="reference internal" href="#id11">=&gt;</a></li>
+<li><a class="reference internal" href="#id13">&lt;=&gt;</a></li>
+<li><a class="reference internal" href="#a">\A</a></li>
+<li><a class="reference internal" href="#e">\E</a></li>
+<li><a class="reference internal" href="#choose">CHOOSE</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#temporal-logic">Temporal Logic</a><ul>
+<li><a class="reference internal" href="#id19">[]</a></li>
+<li><a class="reference internal" href="#id21">&lt;&gt;</a></li>
+<li><a class="reference internal" href="#id23">~&gt;</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to workshop’s documentation!</a></li>
+      <li>Next: <a href="pluscal.html" title="next chapter">PlusCal</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/expressions.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Hillel.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/expressions.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
