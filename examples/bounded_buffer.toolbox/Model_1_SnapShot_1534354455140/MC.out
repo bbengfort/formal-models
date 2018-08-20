@@ -1,0 +1,38 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.13 of 18 July 2018
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with seed -1614277089463877953 with 4 workers on 8 cores with 1214MB heap and 2730MB offheap memory (Mac OS X 10.13.6 x86_64, Oracle Corporation 1.8.0_151 x86_64).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file /Users/benjamin/Workspace/git/tlaplus/bounded_buffer.toolbox/Model_1/MC.tla
+Parsing file /Users/benjamin/Workspace/git/tlaplus/bounded_buffer.toolbox/Model_1/bounded_buffer.tla
+Parsing file /private/var/folders/km/xc2x29pj2873lw14y0bymsc40000gn/T/AppTranslocation/9FDA603B-F419-4773-8960-33B106A697EE/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/TLC.tla
+Parsing file /private/var/folders/km/xc2x29pj2873lw14y0bymsc40000gn/T/AppTranslocation/9FDA603B-F419-4773-8960-33B106A697EE/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/Integers.tla
+Parsing file /private/var/folders/km/xc2x29pj2873lw14y0bymsc40000gn/T/AppTranslocation/9FDA603B-F419-4773-8960-33B106A697EE/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/Sequences.tla
+Parsing file /private/var/folders/km/xc2x29pj2873lw14y0bymsc40000gn/T/AppTranslocation/9FDA603B-F419-4773-8960-33B106A697EE/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/Naturals.tla
+Parsing file /private/var/folders/km/xc2x29pj2873lw14y0bymsc40000gn/T/AppTranslocation/9FDA603B-F419-4773-8960-33B106A697EE/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Integers
+Semantic processing of module bounded_buffer
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2018-08-15 12:34:08)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(115633) at 2018-08-15 12:34:12: 3674173 states generated (3,674,173 s/min), 1033370 distinct states found (1,033,370 ds/min), 3 states left on queue.
+@!@!@ENDMSG 2200 @!@!@

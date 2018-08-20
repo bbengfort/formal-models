@@ -1,3 +1,4 @@
+# TLA+ Toolbox 
 *.toolbox/model
 *.toolbox/*aux
 *.toolbox/*.log
@@ -7,6 +8,11 @@
 *.toolbox/**/*.tla
 /*.toolbox/**/*.out
 *.toolbox/**/MC.cfg
+
+# Generated Files
 *.pdf
 *.old
 *~
+
+# Sphinx Docs 
+reference/_build

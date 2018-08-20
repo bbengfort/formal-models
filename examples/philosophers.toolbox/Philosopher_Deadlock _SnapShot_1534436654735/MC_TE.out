@@ -1,0 +1,417 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.13 of 18 July 2018
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with seed -8477100321739863458 with 4 workers on 8 cores with 1214MB heap and 2730MB offheap memory (Mac OS X 10.13.6 x86_64, Oracle Corporation 1.8.0_151 x86_64).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file /Users/benjamin/Workspace/git/tlaplus/philosophers.toolbox/Philosopher_Deadlock /MC.tla
+Parsing file /Users/benjamin/Workspace/git/tlaplus/philosophers.toolbox/Philosopher_Deadlock /philosophers.tla
+Parsing file /private/var/folders/km/xc2x29pj2873lw14y0bymsc40000gn/T/AppTranslocation/9FDA603B-F419-4773-8960-33B106A697EE/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/TLC.tla
+Parsing file /private/var/folders/km/xc2x29pj2873lw14y0bymsc40000gn/T/AppTranslocation/9FDA603B-F419-4773-8960-33B106A697EE/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/Integers.tla
+Parsing file /private/var/folders/km/xc2x29pj2873lw14y0bymsc40000gn/T/AppTranslocation/9FDA603B-F419-4773-8960-33B106A697EE/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/Sequences.tla
+Parsing file /private/var/folders/km/xc2x29pj2873lw14y0bymsc40000gn/T/AppTranslocation/9FDA603B-F419-4773-8960-33B106A697EE/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/FiniteSets.tla
+Parsing file /private/var/folders/km/xc2x29pj2873lw14y0bymsc40000gn/T/AppTranslocation/9FDA603B-F419-4773-8960-33B106A697EE/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Integers
+Semantic processing of module philosophers
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2018-08-16 11:24:12)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2212:0 @!@!@
+Implied-temporal checking--satisfiability problem has 4 branches.
+@!@!@ENDMSG 2212 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(16) at 2018-08-16 11:24:13: 550 states generated, 244 distinct states found, 0 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2192:0 @!@!@
+Checking 4 branches of temporal properties for the complete state space with 976 total distinct states at (2018-08-16 11:24:13)
+@!@!@ENDMSG 2192 @!@!@
+@!@!@STARTMSG 2116:1 @!@!@
+Temporal properties were violated.
+
+@!@!@ENDMSG 2116 @!@!@
+@!@!@STARTMSG 2264:1 @!@!@
+The following behavior constitutes a counter-example:
+
+@!@!@ENDMSG 2264 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+1: <Initial predicate>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<FALSE, FALSE, FALSE, FALSE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpLeft_", "PickUpLeft_", "PickUpLeft_", "PickUpRight">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+2: <PickUpRight line 150, col 22 to line 154, col 66 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<FALSE, FALSE, FALSE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpLeft_", "PickUpLeft_", "PickUpLeft_", "PickUpLeft">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+3: <PickUpLeft_ line 122, col 22 to line 126, col 66 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, FALSE, FALSE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpLeft_", "PickUpRight_", "PickUpLeft_", "PickUpLeft">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+4: <PickUpLeft line 156, col 21 to line 162, col 65 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, FALSE, TRUE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpLeft_", "PickUpRight_", "PickUpLeft_", "Eat">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+5: <PickUpLeft_ line 122, col 22 to line 126, col 66 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, TRUE, TRUE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpLeft_", "PickUpRight_", "PickUpRight_", "Eat">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+6: <Eat line 164, col 14 to line 167, col 66 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, TRUE, TRUE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpLeft_", "PickUpRight_", "PickUpRight_", "Finish">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+7: <Finish line 169, col 17 to line 173, col 61 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, TRUE, FALSE, FALSE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpLeft_", "PickUpRight_", "PickUpRight_", "Done">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+8: <PickUpLeft_ line 122, col 22 to line 126, col 66 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, TRUE, FALSE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpRight_", "PickUpRight_", "PickUpRight_", "Done">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+9: <PickUpRight_ line 128, col 23 to line 134, col 67 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, TRUE, TRUE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpRight_", "PickUpRight_", "Eat_", "Done">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+10: <Eat_ line 136, col 15 to line 139, col 67 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, TRUE, TRUE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpRight_", "PickUpRight_", "Finish_", "Done">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+11: <Finish_ line 141, col 18 to line 145, col 62 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, FALSE, FALSE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpRight_", "PickUpRight_", "Done", "Done">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+12: <PickUpRight_ line 128, col 23 to line 134, col 67 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, TRUE, FALSE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpRight_", "Eat_", "Done", "Done">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+13: <Eat_ line 136, col 15 to line 139, col 67 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, TRUE, FALSE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpRight_", "Finish_", "Done", "Done">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+14: <Finish_ line 141, col 18 to line 145, col 62 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<FALSE, FALSE, FALSE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"PickUpRight_", "Done", "Done", "Done">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+15: <PickUpRight_ line 128, col 23 to line 134, col 67 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, FALSE, FALSE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"Eat_", "Done", "Done", "Done">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+16: <Eat_ line 136, col 15 to line 139, col 67 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<TRUE, FALSE, FALSE, TRUE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"Finish_", "Done", "Done", "Done">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+17: <Finish_ line 141, col 18 to line 145, col 62 of module philosophers>
+/\ left_ = <<4, 1, 2>>
+/\ sticks = <<FALSE, FALSE, FALSE, FALSE>>
+/\ right = (4 :> 4)
+/\ left = (4 :> 3)
+/\ pc = <<"Done", "Done", "Done", "Done">>
+/\ right_ = <<1, 2, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2218:4 @!@!@
+18: Stuttering
+@!@!@ENDMSG 2218 @!@!@
+@!@!@STARTMSG 2267:0 @!@!@
+Finished checking temporal properties in 00s at 2018-08-16 11:24:13
+@!@!@ENDMSG 2267 @!@!@
+@!@!@STARTMSG 2201:0 @!@!@
+The coverage statistics at 2018-08-16 11:24:13
+@!@!@ENDMSG 2201 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 107, col 12 to line 107, col 17 of module philosophers: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 107, col 20 to line 107, col 21 of module philosophers: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 107, col 24 to line 107, col 28 of module philosophers: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 107, col 31 to line 107, col 36 of module philosophers: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 107, col 39 to line 107, col 42 of module philosophers: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 107, col 45 to line 107, col 49 of module philosophers: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 124, col 25 to line 124, col 71 of module philosophers: 134
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 125, col 25 to line 125, col 66 of module philosophers: 134
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 126, col 38 to line 126, col 42 of module philosophers: 134
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 126, col 45 to line 126, col 50 of module philosophers: 134
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 126, col 53 to line 126, col 56 of module philosophers: 134
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 126, col 59 to line 126, col 63 of module philosophers: 134
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 130, col 37 to line 130, col 84 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 131, col 37 to line 131, col 70 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 132, col 37 to line 132, col 84 of module philosophers: 58
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 133, col 37 to line 133, col 77 of module philosophers: 58
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 134, col 39 to line 134, col 43 of module philosophers: 134
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 134, col 46 to line 134, col 51 of module philosophers: 134
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 134, col 54 to line 134, col 57 of module philosophers: 134
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 134, col 60 to line 134, col 64 of module philosophers: 134
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 138, col 18 to line 138, col 54 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 139, col 31 to line 139, col 36 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 139, col 39 to line 139, col 43 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 139, col 46 to line 139, col 51 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 139, col 54 to line 139, col 57 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 139, col 60 to line 139, col 64 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 142, col 21 to line 143, col 69 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 144, col 21 to line 144, col 54 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 145, col 34 to line 145, col 38 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 145, col 41 to line 145, col 46 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 145, col 49 to line 145, col 52 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 145, col 55 to line 145, col 59 of module philosophers: 76
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 152, col 25 to line 152, col 71 of module philosophers: 38
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 153, col 25 to line 153, col 64 of module philosophers: 38
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 154, col 38 to line 154, col 42 of module philosophers: 38
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 154, col 45 to line 154, col 50 of module philosophers: 38
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 154, col 53 to line 154, col 56 of module philosophers: 38
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 154, col 59 to line 154, col 63 of module philosophers: 38
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 158, col 35 to line 158, col 80 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 159, col 35 to line 159, col 67 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 160, col 35 to line 160, col 82 of module philosophers: 12
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 161, col 35 to line 161, col 75 of module philosophers: 12
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 162, col 37 to line 162, col 41 of module philosophers: 38
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 162, col 44 to line 162, col 49 of module philosophers: 38
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 162, col 52 to line 162, col 55 of module philosophers: 38
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 162, col 58 to line 162, col 62 of module philosophers: 38
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 166, col 17 to line 166, col 52 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 167, col 30 to line 167, col 35 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 167, col 38 to line 167, col 42 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 167, col 45 to line 167, col 50 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 167, col 53 to line 167, col 56 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 167, col 59 to line 167, col 63 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 170, col 20 to line 171, col 67 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 172, col 20 to line 172, col 53 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 173, col 33 to line 173, col 37 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 173, col 40 to line 173, col 45 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 173, col 48 to line 173, col 51 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 173, col 54 to line 173, col 58 of module philosophers: 26
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2202:0 @!@!@
+End of statistics.
+@!@!@ENDMSG 2202 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(16) at 2018-08-16 11:24:13: 550 states generated (30,612 s/min), 244 distinct states found (13,580 ds/min), 0 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+550 states generated, 244 distinct states found, 0 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 1380ms at (2018-08-16 11:24:13)
+@!@!@ENDMSG 2186 @!@!@
